@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Happy Birthday</title>
+    <meta name="theme-color" content="#ffe7f1" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <canvas id="confettiCanvas" aria-hidden="true"></canvas>
+
+    <audio id="backgroundMusic" src="assets/music.mp3" preload="auto" loop></audio>
+    <button id="musicToggle" class="music-toggle" aria-label="Toggle background music" title="Music">
+      <span class="icon icon-play" aria-hidden="true">▶</span>
+      <span class="icon icon-pause" aria-hidden="true">⏸</span>
+    </button>
+
+    <header id="hero" class="section hero">
+      <div class="hero-bg"></div>
+      <div class="hero-glow"></div>
+      <div class="hero-content">
+        <h1 id="heroTitle" class="glow-title">Happy Birthday</h1>
+        <p class="subtitle">Today we celebrate you, and all the light you bring</p>
+        <a class="btn primary" href="#photos">See our memories</a>
+      </div>
+      <div class="scroll-indicator" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="arrow"></div>
+      </div>
+    </header>
+
+    <main>
+      <section id="photos" class="section padded">
+        <div class="section-header">
+          <h2 class="section-title">Our Moments</h2>
+          <p class="section-subtitle">A little slideshow of us</p>
+        </div>
+
+        <div class="slideshow" role="region" aria-label="Photo slideshow">
+          <div class="slides" id="slides"></div>
+          <button class="nav prev" id="prevSlide" aria-label="Previous image">❮</button>
+          <button class="nav next" id="nextSlide" aria-label="Next image">❯</button>
+          <div class="dots" id="dots" role="tablist" aria-label="Slide dots"></div>
+        </div>
+      </section>
+
+      <section id="messages" class="section alt padded">
+        <div class="section-header">
+          <h2 class="section-title">Words From My Heart</h2>
+          <p class="section-subtitle">For you, with all my love</p>
+        </div>
+        <div class="typewriter-card">
+          <div id="typewriter" class="typewriter" aria-live="polite"></div>
+          <div class="tw-controls">
+            <button class="btn ghost" id="prevMessage">Back</button>
+            <button class="btn primary" id="nextMessage">Next</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="surprise" class="section padded">
+        <div class="section-header">
+          <h2 class="section-title">A Little Surprise</h2>
+          <p class="section-subtitle">Click below to reveal</p>
+        </div>
+        <div class="surprise-card">
+          <button id="revealBtn" class="btn luxe">Click to Reveal Surprise</button>
+          <p class="note">Tip: click anywhere for floating hearts ✨</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Made with <span class="heart">❤</span> just for you</p>
+    </footer>
+
+    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+      <div class="modal-backdrop" id="modalBackdrop"></div>
+      <div class="modal-content">
+        <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+        <h3 id="modalTitle">My Love Note To You</h3>
+        <div id="modalBody" class="modal-body"></div>
+      </div>
+    </div>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
